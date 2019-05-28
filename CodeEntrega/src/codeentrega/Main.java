@@ -1,21 +1,38 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package codeentrega;
+
+import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author dam128
  */
+
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Scanner tec = new Scanner(System.in);
+        String resp;
+
+        String[] opciones = {"Lonxitude", "Potencia", "Temperatura", "Salir"};
+        do {
+            resp = (String) JOptionPane.showInputDialog(null, "Seleccione una opcion: ", "Menu", JOptionPane.DEFAULT_OPTION, null, opciones, opciones[0]);
+            switch (resp) {
+                case "Lonxitude":
+                    Lonxitude Obj = new Lonxitude();
+                    Obj.MainLonx();
+                    break;
+                case "Potencia":
+                    Potencia w = new Potencia();
+                    w.MainPot();
+                    break;
+                case "Temperatura":
+                    Temperatura temp = new Temperatura();
+                    temp.MainTemp();
+                    break;
+
+            }
+        } while (!resp.equals("Salir"));
+
     }
-    
 }
